@@ -1489,7 +1489,7 @@ IL_00be:
 
 IL_00cb:
 	{
-		// if (Google.XR.Cardboard.Api.IsTriggerPressed )
+		// if (Google.XR.Cardboard.Api.IsTriggerPressed)
 		il2cpp_codegen_runtime_class_init_inline(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_il2cpp_TypeInfo_var);
 		bool L_22;
 		L_22 = Api_get_IsTriggerPressed_mE2356D33F433C078FB257D788BD9B3B219FA920E(NULL);
