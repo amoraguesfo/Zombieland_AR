@@ -133,6 +133,9 @@ public class GazeInteractionSource : MonoBehaviour
     [SerializeField] private UnityEvent onFocusInteractable;
     [SerializeField] private UnityEvent onLoseFocus;
     [SerializeField] private UnityEvent onClick;
+
+
+
     /// <summary>
     /// Start is called before the first frame update.
     /// </summary>
@@ -209,6 +212,8 @@ public class GazeInteractionSource : MonoBehaviour
 
 
         UpdateDiameters();
+
+
     }
 
     /// <summary>
@@ -337,4 +342,6 @@ public class GazeInteractionSource : MonoBehaviour
     {
         return _gazedAtObject.GetComponentInParent<IEventSystemHandler>() != null;
     }
+
+
 }
