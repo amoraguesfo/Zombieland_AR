@@ -6,20 +6,17 @@ using UnityEngine.SceneManagement;
 public class MenuControler : MonoBehaviour
 {
 
-    public void continuar()
+    public void goToGame()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("Cap2 juego");
+    }
+    public void goToEnd()
+    {
+        SceneManager.LoadScene("Final cap2");
     }
     public void goToMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
-
-    public void Salir()
-    {
-        //Application.Quit();
-        
-    }
-    
+  
 }

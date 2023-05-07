@@ -37,7 +37,8 @@ public class temporizador : MonoBehaviour
             textMesh.text = " Tiempo finalizado: 0 s";
             recuentopuntos = disparoScript.puntuajefinal(); // Almacenamos la puntuacion
             PlayerPrefs.SetFloat("PuntosPlaypref", recuentopuntos);
-            controlador.continuar();
+            //controlador.continuar();
+            controlador.goToEnd();
         }
         else
         {
