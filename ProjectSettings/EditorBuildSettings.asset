@@ -6,14 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Zombiland/Scenes/MainMenu.unity
+    path: Assets/Zombiland/MainMenu.unity
     guid: 0ece63191a73d2144bcb7207160daf7a
-  - enabled: 1
-    path: Assets/Zombiland/Scenes/AR-test.unity
+  - enabled: 0
+    path: Assets/Zombiland/Cap3_Laberinto/Scenes/AR-test.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Zombiland/Scenes/VR-test.unity
+    path: Assets/Zombiland/Cap3_Laberinto/Scenes/VR-test.unity
     guid: 00de61945bfb434418737aefb95a56f4
+  - enabled: 1
+    path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Cap2 juego.unity
+    guid: 6158e12b0d9a747fc88c351f7224062c
+  - enabled: 1
+    path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Final cap2.unity
+    guid: 2539d4207da4b4792a73f2a35e30c886
+  - enabled: 1
+    path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Intro cap2.unity
+    guid: 4b2e285889ba44f3dabbc28f0de5e266
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
