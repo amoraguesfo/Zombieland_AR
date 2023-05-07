@@ -1216,7 +1216,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1199223085}
         m_TargetAssemblyTypeName: MenuControler, Assembly-CSharp
-        m_MethodName: continuar
+        m_MethodName: goToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
