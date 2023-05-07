@@ -87,7 +87,10 @@ namespace Google.XR.Cardboard
             }
             Api.ReloadDeviceParams();
         }
-
+        public void OnDestroy()
+        {
+            StopCardboard();
+        }
         public void Update()
         {
             if (!isStarted)
@@ -109,8 +112,9 @@ namespace Google.XR.Cardboard
             {
                 Api.ReloadDeviceParams();
             }
-
+#if !UNITY_EDITOR
             Api.UpdateScreenParams();
+#endif
         }
 
         private void ConnectCardboardInputSystem()

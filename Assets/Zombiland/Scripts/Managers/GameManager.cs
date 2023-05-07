@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using System;
 namespace Managers
 {
     public class GameManager : MonoBehaviour
@@ -7,7 +8,17 @@ namespace Managers
         [SerializeField] private Transform player;
 
         private static GameManager _instance;
+        public int time = 120;
+        public static event Action<int> onDamage;
 
+        public void RemoveTime()
+        {
+
+        }
+        public void AddTime()
+        {
+
+        }
         public static GameManager Instance
         {
             get
@@ -46,5 +57,6 @@ namespace Managers
         {
             return player;
         }
+
     }
 }

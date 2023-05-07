@@ -1,6 +1,9 @@
+using Google.XR.Cardboard;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mouseMoveEditor : MonoBehaviour
 {
@@ -12,6 +15,8 @@ public class mouseMoveEditor : MonoBehaviour
     float mouseX;
     float mouseY;
     float yReal = 0.0f;
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -29,4 +34,5 @@ public class mouseMoveEditor : MonoBehaviour
         cam.localRotation = Quaternion.Euler(yReal, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
+
 }
