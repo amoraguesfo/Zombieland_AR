@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using TMPro;
+
 namespace Managers
 {
     public class GameManager : MonoBehaviour
@@ -8,17 +10,11 @@ namespace Managers
         [SerializeField] private Transform player;
 
         private static GameManager _instance;
-        public int time = 120;
-        public static event Action<int> onDamage;
 
-        public void RemoveTime()
-        {
+        public TextMeshProUGUI textTimer;
+        public float timer = 120f;
 
-        }
-        public void AddTime()
-        {
 
-        }
         public static GameManager Instance
         {
             get
@@ -53,10 +49,51 @@ namespace Managers
             }
         }
 
+
         public Transform GetPlayer()
         {
             return player;
         }
+
+        private void Start()
+        {
+
+            textTimer.text = "Tiempo: " + timer.ToString("n2");
+        }
+        private void Update()
+        {
+            timer -= Time.deltaTime;
+            textTimer.text = "Tiempo: " + timer.ToString("n2");
+            if (timer < 0)  textTimer.color = Color.red;
+
+        }
+        public void RemoveTime()
+        {
+            timer -= 10f;
+        }
+        public void AddTime()
+        {
+            timer += 10f;
+        }
+
+        //private void Start()
+        //{
+        //    StartCoroutine(CuentaAtras());
+        //}
+
+        //IEnumerator CuentaAtras()
+        //{
+        //    Contador.text = ValorInicial.ToString();
+        //    while (ValorInicial > 0)
+        //    {
+        //        yield return new WaitForSeconds(1);
+        //        ValorInicial--;
+        //        Contador.text = ValorInicial.ToString();
+        //    }
+
+        //    // Haz lo que sea
+        //}
+
 
     }
 }

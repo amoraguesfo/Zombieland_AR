@@ -31,6 +31,7 @@ namespace Animations
             while (time < delay && Vector3.Distance(transform.position, _player.position) > CollectingDistance)
             {
                 transform.position = Vector3.Lerp(transform.position, _player.position, time / delay);
+                
                 yield return null;
                 time += Time.deltaTime;
             }
