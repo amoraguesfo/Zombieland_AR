@@ -35,7 +35,7 @@ namespace Animations
                 yield return null;
                 time += Time.deltaTime;
             }
-            
+            GameManager.Instance.AddTime();
             Destroy(gameObject);
         }
     }
