@@ -44,9 +44,21 @@ public class Teclado : MonoBehaviour
 
     void CompararCombinaciones()
     {
-        for (int i = 0; i < combinacionCorrecta.Count; i++)
+
+        for (int i = 0; i < combinacionActual.Count; i++) //Combinación en cualquier orden
         {
-            if(combinacionCorrecta[i] != combinacionActual[i])
+            if(combinacionActual.FindAll(x=>x.Equals(combinacionActual[i])).Count > 1)
+            {
+                if (combinacionCorrecta.FindAll(x => x.Equals(combinacionActual[i])).Count <= 1)
+                {
+                    //MOstrar indicador de combinacion incorrecta
+                    indicadorResultado.color = Color.red;
+                    combinacionActual.Clear();
+                    return;
+                }
+            }
+
+            if (!combinacionCorrecta.Contains(combinacionActual[i]))
             {
                 //MOstrar indicador de combinacion incorrecta
                 indicadorResultado.color = Color.red;
@@ -54,6 +66,18 @@ public class Teclado : MonoBehaviour
                 return;
             }
         }
+
+
+        //for (int i = 0; i < combinacionCorrecta.Count; i++) //Comprobación combinación en orden
+        //{
+        //    if(combinacionCorrecta[i] != combinacionActual[i])
+        //    {
+        //        //MOstrar indicador de combinacion incorrecta
+        //        indicadorResultado.color = Color.red;
+        //        combinacionActual.Clear();
+        //        return;
+        //    }
+        //}
 
         //Mostrar indicador de combinacion correcta
         indicadorResultado.color = Color.green;
