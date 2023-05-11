@@ -30,11 +30,11 @@ EditorBuildSettings:
     path: Assets/Zombiland/Cap4_ScapeRoom/Scenes/GameVR.unity
     guid: 145a2a45d7bc746b19cb68410368bf96
   - enabled: 0
+    path: Assets/Zombiland/CapX/AR_Cap5.unity
+    guid: cdfa3e7b1c4a36741a64d24299a3802a
+  - enabled: 1
     path: Assets/Zombiland/ARtests/Scenes/UX/SampleUXScene.unity
     guid: 3b42d67a72bbc4004bf713db0e312326
-  - enabled: 1
-    path: Assets/Zombiland/ARtests/ARFreeThrow/ARFreeThrow.unity
-    guid: e6ba9539513ac453aa43f1c6a61078a1
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
