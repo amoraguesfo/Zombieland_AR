@@ -272,12 +272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c430825f6571804abfd58efef3b8343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 282840813}
   maxGrabDistance: 10
   throwForce: 20
   lerpSpeed: 10
-  objectHolder: {fileID: 0}
-  m_scene: {fileID: 0}
+  objectHolder: {fileID: 1452374055}
+  m_scene: {fileID: 2346375747970804130, guid: 28fcc059f7a9ea84db59da84b0eb3963, type: 3}
 --- !u!1 &427002218
 GameObject:
   m_ObjectHideFlags: 0

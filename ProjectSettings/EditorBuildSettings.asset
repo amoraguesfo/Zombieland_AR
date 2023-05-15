@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Zombiland/CapX/AR_Cap5.unity
     guid: cdfa3e7b1c4a36741a64d24299a3802a
+  - enabled: 0
+    path: Assets/Zombiland/CapX/SampleUXScene.unity
+    guid: ba518e4f0f08a4546be3be683336d927
   - enabled: 1
     path: Assets/Zombiland/ARtests/Scenes/UX/SampleUXScene.unity
     guid: 3b42d67a72bbc4004bf713db0e312326
