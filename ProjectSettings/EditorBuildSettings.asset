@@ -5,30 +5,36 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zombiland/Inicio/Scenes/MainMenu.unity
     guid: 0ece63191a73d2144bcb7207160daf7a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Intro cap2.unity
     guid: 4b2e285889ba44f3dabbc28f0de5e266
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Cap2 juego.unity
     guid: 6158e12b0d9a747fc88c351f7224062c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Final cap2.unity
     guid: 2539d4207da4b4792a73f2a35e30c886
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zombiland/Cap3_Laberinto/Scenes/Cap3_intro.unity
     guid: 1f6c54da94e29f34b8e87215250baa52
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zombiland/Cap3_Laberinto/Scenes/Cap3.unity
     guid: 00de61945bfb434418737aefb95a56f4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zombiland/Cap3_Laberinto/Scenes/Cap3_end.unity
     guid: 6934ff079bb5ed74d888b377cad6f3e0
+  - enabled: 0
+    path: Assets/Zombiland/ARtests/Scenes/UX/SampleUXScene.unity
+    guid: 3b42d67a72bbc4004bf713db0e312326
+  - enabled: 0
+    path: Assets/AR-tests/Scenes/UX/SampleUXScene.unity
+    guid: 94f2d817a050a414aa3a2889bf716f28
   - enabled: 1
-    path: Assets/Zombiland/Cap4_ScapeRoom/Scenes/GameVR.unity
-    guid: 145a2a45d7bc746b19cb68410368bf96
+    path: Assets/AR-tests/ARFreeThrow/ARFreeThrow.unity
+    guid: e6ba9539513ac453aa43f1c6a61078a1
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
