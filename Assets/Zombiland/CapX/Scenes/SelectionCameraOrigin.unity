@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 0}
-  m_DetectionMode: 1
+  m_DetectionMode: -1
 --- !u!114 &949859163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,13 +568,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f64cf875da7a7d42947450bd7245ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPlace: {fileID: 1057467043738047607, guid: 52dbd7678a2a3874d96715a353b42b5e,
+  objectToPlace: {fileID: 2524469832946206386, guid: fbf35c68c2a54584db39d4431c066333,
     type: 3}
   placementIndicator: {fileID: 32611630}
   welcomePanel: {fileID: 1742927753}
   dismissButton: {fileID: 142380830}
   arCamera: {fileID: 985279462}
-  maxGrabDistance: 10
+  maxGrabDistance: 2
   throwForce: 20
   lerpSpeed: 10
   objectHolder: {fileID: 1139311490}
@@ -819,7 +819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139311489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: -0.2, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

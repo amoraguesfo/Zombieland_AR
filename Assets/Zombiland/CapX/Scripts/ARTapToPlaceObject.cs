@@ -36,6 +36,10 @@ public class ARTapToPlaceObject : MonoBehaviour
         if (spawnedObject == null)
         {
            spawnedObject = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+            // Ajustar la posición en función del tamaño del objeto
+            Vector3 objectScale = spawnedObject.transform.localScale;
+            Vector3 adjustedPosition = placementPose.position - new Vector3(0, objectScale.y / 2, 0);
+            spawnedObject.transform.position = adjustedPosition;
             placementIndicator.SetActive(false);
         }
         //else

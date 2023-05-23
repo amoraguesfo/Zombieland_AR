@@ -6,6 +6,9 @@ using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
+[RequireComponent(typeof(ARRaycastManager))]
+[RequireComponent(typeof(ARPlaneManager))]
+[RequireComponent(typeof(ARAnchor))]
 public class GravityGun : MonoBehaviour
 {
     //AR tap to place
@@ -13,8 +16,11 @@ public class GravityGun : MonoBehaviour
     public GameObject placementIndicator;
     private GameObject spawnedObject;
     private ARRaycastManager arOrigin;
-    //private Pose placementPose;
-
+    private ARAnchorManager arPointManager;
+    private ARPlaneManager arPlaneManager;
+    private List<ARAnchor> referencePoints = new List<ARAnchor>();
+    private Pose placementPose;
+    private ARAnchor referencePoint;
     private bool placementPoseIsValid = false;
 
     //Panel de start
@@ -50,6 +56,8 @@ public class GravityGun : MonoBehaviour
     private void Start()
     {
         arOrigin = GetComponent<ARRaycastManager>();
+        arPlaneManager = GetComponent<ARPlaneManager>();
+        arPointManager = GetComponent<ARAnchorManager>();
         TextNumTablas.text = "Tablas " + numTablas;
     }
     void Update()
@@ -105,7 +113,7 @@ public class GravityGun : MonoBehaviour
     {
         if (spawnedObject == null)
         {
-            spawnedObject = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);          
+            spawnedObject = Instantiate(objectToPlace, referencePoint.transform.position, referencePoints[0].transform.rotation);
             placementIndicator.SetActive(false);
             // Busca el objeto de la ventana por su nombre
             windowObject = GameObject.Find("Window");
@@ -132,12 +140,15 @@ public class GravityGun : MonoBehaviour
     {
         var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
-        arOrigin.Raycast(screenCenter, hits, TrackableType.Planes);
+        arOrigin.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon);
 
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)
         {
             placementPose = hits[0].pose;
+            referencePoint = arPointManager.AddAnchor(placementPose);
+           
+
         }
     }
 }
