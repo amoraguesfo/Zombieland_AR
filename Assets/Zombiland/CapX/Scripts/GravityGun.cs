@@ -13,15 +13,17 @@ public class GravityGun : MonoBehaviour
     public GameObject placementIndicator;
     private GameObject spawnedObject;
     private ARRaycastManager arOrigin;
-    private Pose placementPose;
+    //private Pose placementPose;
+
     private bool placementPoseIsValid = false;
 
-    //Logica de los tablones 
+    //Panel de start
     [SerializeField]
     private GameObject welcomePanel;
 
     [SerializeField]
     private Button dismissButton;
+
     [SerializeField]
     private Camera arCamera;
 
@@ -42,7 +44,7 @@ public class GravityGun : MonoBehaviour
     private void Awake()
     {
         dismissButton.onClick.AddListener(Dismiss);
-        Dismiss();
+
     }
 
     private void Start()
@@ -52,6 +54,10 @@ public class GravityGun : MonoBehaviour
     }
     void Update()
     {
+
+        if (welcomePanel.activeSelf)
+            return;
+
         UpdatePlacementPose();
         UpdatePlacementIndicator();
         if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -59,8 +65,6 @@ public class GravityGun : MonoBehaviour
             TapToPlaceObject();
         }
 
-        if (welcomePanel.activeSelf)
-            return;
 
         if (grabbedRB)
         {
@@ -68,20 +72,8 @@ public class GravityGun : MonoBehaviour
             grabbedRB.MovePosition(Vector3.Lerp(grabbedRB.position, objectHolder.transform.position, Time.deltaTime * lerpSpeed));
             // Get the horizontal rotation from objectHolder's rotation
             Quaternion horizontalRotation = Quaternion.Euler(90f, objectHolder.rotation.eulerAngles.y, 0f);
-
-            if (windowTrigger && windowTrigger.IsObjectOnWindow(grabbedRB.gameObject))
-            {
-                // Aplicar tonalidad rojiza suave al objeto sobre el trigger
-                Renderer grabbedRenderer = grabbedRB.gameObject.GetComponent<Renderer>();
-                Color redTint = new Color(1f, 0.5f, 0.5f, 1f); // Tonalidad rojiza suave (ajusta los valores según tu preferencia)
-                grabbedRenderer.material.color = redTint;
-            }
-            else
-            {
-                // Restablecer el color del objeto a su estado original
-                Renderer grabbedRenderer = grabbedRB.gameObject.GetComponent<Renderer>();
-                grabbedRenderer.material.color = Color.white;
-            }
+            // Set the rotation of the grabbed object to the horizontal rotation
+            grabbedRB.MoveRotation(horizontalRotation);
 
         }
 
@@ -91,37 +83,21 @@ public class GravityGun : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-
-                if (grabbedRB)
+                RaycastHit hit;
+                Ray ray = arCamera.ScreenPointToRay(selector.transform.position);
+                if (Physics.Raycast(ray, out hit, maxGrabDistance))
                 {
-                    if (windowTrigger.IsObjectOnWindow(grabbedRB.gameObject))
-                    {
-                        grabbedRB.isKinematic = true;
-                        grabbedRB = null;
-                        TextNumTablas.text = "Tablas " + numTablas--;
-
-                    }
-
-                        grabbedRB.isKinematic = false;
-                        grabbedRB = null;
-                    
-
-                }
-                else
-                {
-                    RaycastHit hit;
-                    Ray ray = arCamera.ScreenPointToRay(selector.transform.position);
-                    if (Physics.Raycast(ray, out hit, maxGrabDistance))
-                    {
-                        grabbedRB = hit.collider.gameObject.GetComponent<Rigidbody>();
-                        if (grabbedRB)
-                        {
-                            grabbedRB.MoveRotation(Quaternion.Euler(90f, 0f, 0f));
-                            grabbedRB.isKinematic = true;
-                        }
-                    }
+                    grabbedRB = hit.collider.gameObject.GetComponent<Rigidbody>();
+                    grabbedRB.MoveRotation(Quaternion.Euler(90f, 0f, 0f));
+                    grabbedRB.isKinematic = true;                   
                 }
             }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                grabbedRB.isKinematic = false;
+                grabbedRB = null;
+            }
+
         }
     }
 

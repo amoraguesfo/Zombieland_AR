@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f64cf875da7a7d42947450bd7245ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPlace: {fileID: 5976255020920100947, guid: 17b0b5f8581126f47a9ca5cc6412a800,
+  objectToPlace: {fileID: 1057467043738047607, guid: 52dbd7678a2a3874d96715a353b42b5e,
     type: 3}
   placementIndicator: {fileID: 32611630}
   welcomePanel: {fileID: 1742927753}
