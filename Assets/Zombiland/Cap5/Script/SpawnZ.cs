@@ -5,39 +5,47 @@ using UnityEngine;
 public class SpawnZ : MonoBehaviour
 {
     public GameObject zombie;
-    public Vector3 spawnValues;
-    public float spawnWait;
-    public int startWait;
-    public bool parar;
- 
+    public Transform[] spawnPoints; // Array de las 3 posiciones
+    public int oleadas = 5; // Total de oleadas de enemigos
+    public float tiempoentreolas = 10f; // Tiempo entre oleadas en segundos
 
-    int randEnemy;
+    private int oleadaActual = 0; // Oleada actual
+    private bool isCreando = false; // Indicador de si se está generando una oleada
 
-    void Start()
+    private void Start()
     {
-        while (!parar)
-        {
-            waitSpawner();
-        }
+        Inicio();
     }
 
-    void Update()
+    private void Inicio()
     {
-        
+        isCreando = true;
+        oleadaActual = 0;
+
+        // Iniciar la generación de oleadas en un intervalo de tiempo
+        StartCoroutine(CrearOlas());
     }
 
-    IEnumerator waitSpawner()
+    private System.Collections.IEnumerator CrearOlas()
     {
-        yield
-        return new WaitForSeconds(startWait);
-        
-        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1f, Random.Range(-spawnValues.z, spawnValues.z));
-        for (int i = 0; i < 3; i++)
+        while (oleadaActual < oleadas)
         {
-            Instantiate(zombie, spawnPosition + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
+            GeneraZombies();
+
+            yield return new WaitForSeconds(tiempoentreolas);
+
+            oleadaActual++;
         }
-        yield
-        return new WaitForSeconds(spawnWait);
-        
+
+        isCreando = false;
+    }
+
+    private void GeneraZombies()
+    {
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            // Instanciar un nuevo enemigo en la posición de generación correspondiente
+            GameObject enemy = Instantiate(zombie, spawnPoints[i].position, spawnPoints[i].rotation);
+        }
     }
 }

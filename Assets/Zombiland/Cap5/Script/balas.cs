@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class balas : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Zombie"))
+        if (other.CompareTag("Sala"))
         {
-            Destroy(collision.gameObject);
+            Destroy(gameObject); // Destruye la bala si choca contra un zombie
+            
+        }
+        else
+        { 
+        if (other.CompareTag("Zombie"))
+        {
+            Destroy(gameObject); // Si choca con cualquier cosa tambien se destruye
+        }
         }
     }
 }

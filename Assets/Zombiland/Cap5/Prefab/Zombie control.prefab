@@ -3167,7 +3167,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5258471869719224014}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.8, z: 0.5}
@@ -3223,8 +3223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objetivo: {fileID: 0}
-  velocidad: 2.5
-  IA: {fileID: 0}
+  velocidad: 1
+  IA: {fileID: 6483564976219559374}
+  health: 1
+  animation: {fileID: 0}
+  attackDistance: 1
 --- !u!1 &5258473610364822056
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ TagManager:
   - Zombie
   - HitScreen
   - Enemigo
+  - Bala
+  - Sala
   layers:
   - Default
   - TransparentFX
