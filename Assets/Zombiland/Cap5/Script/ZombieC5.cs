@@ -39,7 +39,7 @@ public class ZombieC5 : MonoBehaviour
         if (currentDist > attackDistance)
         {
             IA.SetDestination(Objetivo.transform.position);
-            caminar.Play("walk");
+            caminar.Play();
             transform.LookAt(Objetivo);
 
         }
@@ -48,7 +48,7 @@ public class ZombieC5 : MonoBehaviour
         {
 
             IA.velocity = Vector3.zero;
-            atacar.Play("atack1");
+            atacar.Play();
             
         }
 
