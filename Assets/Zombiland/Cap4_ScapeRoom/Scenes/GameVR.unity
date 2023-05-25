@@ -8418,7 +8418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Contador: {fileID: 1747619429}
-  ValorInicial: 10
+  ValorInicial: 60
 --- !u!114 &1747619429
 MonoBehaviour:
   m_ObjectHideFlags: 0
