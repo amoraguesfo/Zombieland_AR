@@ -7,18 +7,13 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 [RequireComponent(typeof(ARRaycastManager))]
-[RequireComponent(typeof(ARPlaneManager))]
-[RequireComponent(typeof(ARAnchor))]
-public class GravityGun : MonoBehaviour
+public class ARCap5Controller : MonoBehaviour
 {
     //AR tap to place
     public GameObject objectToPlace;
     public GameObject placementIndicator;
     private GameObject spawnedObject;
     private ARRaycastManager arOrigin;
-    private ARAnchorManager arPointManager;
-    private ARPlaneManager arPlaneManager;
-    private List<ARAnchor> referencePoints = new List<ARAnchor>();
     private Pose placementPose;
     private ARAnchor referencePoint;
     private bool placementPoseIsValid = false;
@@ -33,7 +28,7 @@ public class GravityGun : MonoBehaviour
     [SerializeField]
     private Camera arCamera;
 
-    [SerializeField] float maxGrabDistance = 10f, throwForce = 20f, lerpSpeed = 10f;
+    [SerializeField] float maxGrabDistance = 4f, lerpSpeed = 10f;
     [SerializeField] Transform objectHolder;
 
     [SerializeField]
@@ -42,22 +37,25 @@ public class GravityGun : MonoBehaviour
 
     Rigidbody grabbedRB;
 
-    private GameObject windowObject;
-    private WindowTrigger windowTrigger;
+    private GameObject tablonObject1;
+    private GameObject tablonObject2;
+    private GameObject tablonObject3;
+    private TablonTrigger tablonTrigger1;
+    private TablonTrigger tablonTrigger2;
+    private TablonTrigger tablonTrigger3;
 
     private int numTablas = 3;
     private void Dismiss() => welcomePanel.SetActive(false);
     private void Awake()
     {
         dismissButton.onClick.AddListener(Dismiss);
+        selector.SetActive(false);
 
     }
 
     private void Start()
     {
         arOrigin = GetComponent<ARRaycastManager>();
-        arPlaneManager = GetComponent<ARPlaneManager>();
-        arPointManager = GetComponent<ARAnchorManager>();
         TextNumTablas.text = "Tablas " + numTablas;
     }
     void Update()
@@ -76,11 +74,9 @@ public class GravityGun : MonoBehaviour
 
         if (grabbedRB)
         {
-            // Reset the position and rotation of the grabbed object
+   
             grabbedRB.MovePosition(Vector3.Lerp(grabbedRB.position, objectHolder.transform.position, Time.deltaTime * lerpSpeed));
-            // Get the horizontal rotation from objectHolder's rotation
             Quaternion horizontalRotation = Quaternion.Euler(90f, objectHolder.rotation.eulerAngles.y, 0f);
-            // Set the rotation of the grabbed object to the horizontal rotation
             grabbedRB.MoveRotation(horizontalRotation);
 
         }
@@ -97,12 +93,31 @@ public class GravityGun : MonoBehaviour
                 {
                     grabbedRB = hit.collider.gameObject.GetComponent<Rigidbody>();
                     grabbedRB.MoveRotation(Quaternion.Euler(90f, 0f, 0f));
-                    grabbedRB.isKinematic = true;                   
+                    grabbedRB.isKinematic = true;
                 }
             }
             if (touch.phase == TouchPhase.Ended)
             {
-                grabbedRB.isKinematic = false;
+                if (tablonTrigger1.IsObjectOnWindow() && !tablonTrigger1.IsObjectPositioned())
+                {
+                    tablonTrigger1.PositionObject(grabbedRB.gameObject);
+                    numTablas--;
+                }
+                else if (tablonTrigger2.IsObjectOnWindow() && !tablonTrigger2.IsObjectPositioned())
+                {            
+                    tablonTrigger2.PositionObject(grabbedRB.gameObject);
+                    numTablas--;
+                }
+                else if (tablonTrigger3.IsObjectOnWindow() && !tablonTrigger3.IsObjectPositioned())
+                {
+                    tablonTrigger3.PositionObject(grabbedRB.gameObject);
+                    numTablas--;
+                }
+                else
+                {
+                    grabbedRB.isKinematic = false;
+                }
+                TextNumTablas.text = "Tablas " + numTablas;
                 grabbedRB = null;
             }
 
@@ -113,12 +128,10 @@ public class GravityGun : MonoBehaviour
     {
         if (spawnedObject == null)
         {
-            spawnedObject = Instantiate(objectToPlace, referencePoint.transform.position, referencePoints[0].transform.rotation);
+            spawnedObject = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+            InitTablonesTriggers();
             placementIndicator.SetActive(false);
-            // Busca el objeto de la ventana por su nombre
-            windowObject = GameObject.Find("Window");
-            // Si necesitas acceder a un componente WindowTrigger adjunto al objeto de la ventana, puedes obtener la referencia también
-            windowTrigger = windowObject.GetComponent<WindowTrigger>();
+            selector.SetActive(true);
         }
 
     }
@@ -140,15 +153,28 @@ public class GravityGun : MonoBehaviour
     {
         var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
-        arOrigin.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon);
+        arOrigin.Raycast(screenCenter, hits, TrackableType.Planes);
 
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)
         {
             placementPose = hits[0].pose;
-            referencePoint = arPointManager.AddAnchor(placementPose);
-           
-
         }
     }
+
+    private void InitTablonesTriggers()
+    {
+        // Busca el objeto de la ventana por su nombre
+        tablonObject1 = GameObject.Find("TablonTrigger1");
+        tablonObject2 = GameObject.Find("TablonTrigger2");
+        tablonObject3 = GameObject.Find("TablonTrigger3");
+
+        // Si necesitas acceder a un componente TablonTrigger adjunto al objeto de la ventana, puedes obtener la referencia también
+        tablonTrigger1 = tablonObject1.GetComponent<TablonTrigger>();
+        tablonTrigger2 = tablonObject2.GetComponent<TablonTrigger>();
+        tablonTrigger3 = tablonObject3.GetComponent<TablonTrigger>();
+
+        TextNumTablas.text = "Tablones added to scene";
+    }
+
 }

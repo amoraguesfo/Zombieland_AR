@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - HitScreen
+  - Window
   - Tablon
   layers:
   - Default

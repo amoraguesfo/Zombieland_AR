@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 949859162}
   - component: {fileID: 949859161}
   - component: {fileID: 949859166}
+  - component: {fileID: 949859167}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -574,12 +575,24 @@ MonoBehaviour:
   welcomePanel: {fileID: 1742927753}
   dismissButton: {fileID: 142380830}
   arCamera: {fileID: 985279462}
-  maxGrabDistance: 2
-  throwForce: 20
+  maxGrabDistance: 4
   lerpSpeed: 10
   objectHolder: {fileID: 1139311490}
   selector: {fileID: 1377335751}
   TextNumTablas: {fileID: 595351541}
+--- !u!114 &949859167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949859159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb898793194e03f4bb10dba03ec2cb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DestroyOnRemoval: 1
 --- !u!1 &961715794
 GameObject:
   m_ObjectHideFlags: 0
