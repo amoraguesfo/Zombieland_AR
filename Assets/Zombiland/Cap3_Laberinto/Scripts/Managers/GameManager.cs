@@ -76,24 +76,6 @@ namespace Managers
             timer += 10f;
         }
 
-        //private void Start()
-        //{
-        //    StartCoroutine(CuentaAtras());
-        //}
-
-        //IEnumerator CuentaAtras()
-        //{
-        //    Contador.text = ValorInicial.ToString();
-        //    while (ValorInicial > 0)
-        //    {
-        //        yield return new WaitForSeconds(1);
-        //        ValorInicial--;
-        //        Contador.text = ValorInicial.ToString();
-        //    }
-
-        //    // Haz lo que sea
-        //}
-
 
     }
 }

@@ -31,6 +31,7 @@ public class TablonTrigger : MonoBehaviour
         ///tablon.GetComponent<Rigidbody>().isKinematic = true;
         Destroy(tablon.GetComponent<Rigidbody>());
         isPositioned = true;
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

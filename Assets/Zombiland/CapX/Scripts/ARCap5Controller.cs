@@ -15,7 +15,7 @@ public class ARCap5Controller : MonoBehaviour
     private GameObject spawnedObject;
     private ARRaycastManager arOrigin;
     private Pose placementPose;
-    private ARAnchor referencePoint;
+
     private bool placementPoseIsValid = false;
 
     //Panel de start
@@ -34,7 +34,7 @@ public class ARCap5Controller : MonoBehaviour
     [SerializeField]
     private GameObject selector;
     [SerializeField] private TextMeshProUGUI TextNumTablas;
-
+    [SerializeField] public TextMeshProUGUI textTimer;
     Rigidbody grabbedRB;
 
     private GameObject tablonObject1;
@@ -45,7 +45,11 @@ public class ARCap5Controller : MonoBehaviour
     private TablonTrigger tablonTrigger3;
 
     private int numTablas = 3;
-    private void Dismiss() => welcomePanel.SetActive(false);
+    private void Dismiss() {
+        welcomePanel.SetActive(false);
+        textTimer.text = "Buscando plano...";
+    }
+
     private void Awake()
     {
         dismissButton.onClick.AddListener(Dismiss);
@@ -57,6 +61,7 @@ public class ARCap5Controller : MonoBehaviour
     {
         arOrigin = GetComponent<ARRaycastManager>();
         TextNumTablas.text = "Tablas " + numTablas;
+       
     }
     void Update()
     {
@@ -113,17 +118,29 @@ public class ARCap5Controller : MonoBehaviour
                     tablonTrigger3.PositionObject(grabbedRB.gameObject);
                     numTablas--;
                 }
+
                 else
                 {
                     grabbedRB.isKinematic = false;
                 }
                 TextNumTablas.text = "Tablas " + numTablas;
                 grabbedRB = null;
+                if(numTablas == 0)
+                {
+
+                    Invoke("endOfCap", 3f);
+                    
+                }
             }
 
         }
     }
 
+    private void endOfCap()
+    {
+        //SceneManager.LoadScene("MainMenu");
+        Cap5GameManager.Instance.endCap5();
+    }
     private void TapToPlaceObject()
     {
         if (spawnedObject == null)
@@ -132,6 +149,7 @@ public class ARCap5Controller : MonoBehaviour
             InitTablonesTriggers();
             placementIndicator.SetActive(false);
             selector.SetActive(true);
+            Cap5GameManager.Instance.startTimer();
         }
 
     }
