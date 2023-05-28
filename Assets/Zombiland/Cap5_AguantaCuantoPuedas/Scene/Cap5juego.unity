@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.547
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.27619123, g: 0.28205943, b: 0.2656285, a: 0.547}
+  m_IndirectSpecularColor: {r: 0.27623346, g: 0.2820443, b: 0.2655994, a: 0.547}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   barravida: {fileID: 102715255}
   puntuacion: {fileID: 1625272590}
   textTimer: {fileID: 1948126296}
-  timer: 5
+  timer: 10
 --- !u!54 &2137928567
 Rigidbody:
   m_ObjectHideFlags: 0
