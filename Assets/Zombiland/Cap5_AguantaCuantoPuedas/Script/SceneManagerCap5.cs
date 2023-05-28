@@ -39,6 +39,6 @@ public class SceneManagerCap5 : MonoBehaviour
 
     public void menufinal()
     {
-        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene();
     }
 }
