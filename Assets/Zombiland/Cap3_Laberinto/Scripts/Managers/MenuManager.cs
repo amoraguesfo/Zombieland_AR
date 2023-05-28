@@ -25,6 +25,7 @@ public class MenuManager : MonoBehaviour
     }
     public void goToMenu()
     {
+        CardboardController.Instance.StopCardboard();
         SceneManager.LoadScene("MainMenu");
     }
 

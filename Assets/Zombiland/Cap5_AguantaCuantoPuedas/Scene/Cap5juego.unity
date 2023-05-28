@@ -2432,7 +2432,7 @@ MonoBehaviour:
   barravida: {fileID: 102715255}
   puntuacion: {fileID: 1625272590}
   textTimer: {fileID: 1948126296}
-  timer: 10
+  timer: 80
 --- !u!54 &2137928567
 Rigidbody:
   m_ObjectHideFlags: 0
