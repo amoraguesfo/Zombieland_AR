@@ -22,7 +22,7 @@ public class ButtonUI : MonoBehaviour
     }
     public void LoadCap5()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Cap5-Intro");
 
     }
 }

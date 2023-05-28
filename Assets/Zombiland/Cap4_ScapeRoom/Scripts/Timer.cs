@@ -6,7 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI Contador;
-    public int ValorInicial = 10;
+    public int ValorInicial = 60;
 
     private void Start()
     {
