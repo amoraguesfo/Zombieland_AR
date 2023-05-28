@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Puntosfinales : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class Puntosfinales : MonoBehaviour
         puntos = PlayerPrefs.GetFloat("PuntosPlaypref",0f);
         puntuaje = GameObject.Find("puntos").GetComponent<TextMeshProUGUI>();
         puntuaje.text = "Tus puntuación: " + puntos.ToString() + " pnts";
-
+        //Añadimos los puntos del Cap2
+        AppController.Instance.addScore((int)Math.Round(puntos));
     }
     
 }

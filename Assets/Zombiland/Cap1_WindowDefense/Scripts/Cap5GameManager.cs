@@ -69,6 +69,8 @@ public class Cap5GameManager : MonoBehaviour
     {
 
         stopTimer();
+        //Añadimos los puntos del Cap1
+        AppController.Instance.addScore((int)Math.Round(timer));
         textTimer.text = "Ya estás a salvo, por ahora....!!";
     }
 

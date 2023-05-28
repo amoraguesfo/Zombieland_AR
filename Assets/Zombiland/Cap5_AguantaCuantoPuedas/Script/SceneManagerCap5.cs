@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class SceneManagerCap5 : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class SceneManagerCap5 : MonoBehaviour
 
     public void menufinal()
     {
+        //Añadimos los puntos del Cap1
+        AppController.Instance.addScore(puntuacion);
         SceneManager.LoadScene("MainMenu");
     }
 }
