@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -129,7 +130,8 @@ public class ARCap5Controller : MonoBehaviour
                 {
 
                     Invoke("endOfCap", 3f);
-                    
+                    Cap5GameManager.Instance.endCap5();
+
                 }
             }
 
@@ -138,8 +140,8 @@ public class ARCap5Controller : MonoBehaviour
 
     private void endOfCap()
     {
-        //SceneManager.LoadScene("MainMenu");
-        Cap5GameManager.Instance.endCap5();
+       
+        SceneManager.LoadScene("MainMenu");
     }
     private void TapToPlaceObject()
     {

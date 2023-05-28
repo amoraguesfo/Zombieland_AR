@@ -69,7 +69,7 @@ public class Cap5GameManager : MonoBehaviour
     {
 
         stopTimer();
-        textTimer.text = "ha tomar Por culo los Zombies!!!!";
+        textTimer.text = "Ya estás a salvo, por ahora....!!";
     }
 
     

@@ -5,33 +5,30 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Zombiland/Inicio/Scenes/MainMenu.unity
     guid: 0ece63191a73d2144bcb7207160daf7a
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Zombiland/Cap1_WindowDefense/Scenes/Cap1.unity
+    guid: 05e69c999ba66ff46a4064364981b926
+  - enabled: 1
     path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Intro cap2.unity
     guid: 4b2e285889ba44f3dabbc28f0de5e266
-  - enabled: 0
+  - enabled: 1
     path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Cap2 juego.unity
     guid: 6158e12b0d9a747fc88c351f7224062c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Zombiland/Cap2_SalDeDondeEstes/Escenas/Final cap2.unity
     guid: 2539d4207da4b4792a73f2a35e30c886
-  - enabled: 0
+  - enabled: 1
     path: Assets/Zombiland/Cap3_Laberinto/Scenes/Cap3_intro.unity
     guid: 1f6c54da94e29f34b8e87215250baa52
-  - enabled: 0
+  - enabled: 1
     path: Assets/Zombiland/Cap3_Laberinto/Scenes/Cap3.unity
     guid: 00de61945bfb434418737aefb95a56f4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Zombiland/Cap3_Laberinto/Scenes/Cap3_end.unity
     guid: 6934ff079bb5ed74d888b377cad6f3e0
-  - enabled: 0
-    path: Assets/Zombiland/Cap1_/Scenes/PlaneDetectonAndPlacement.unity
-    guid: 24e0dadb43e6701439922fc205827d16
-  - enabled: 1
-    path: Assets/Zombiland/Cap1_WindowDefense/Scenes/Cap5.unity
-    guid: 05e69c999ba66ff46a4064364981b926
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

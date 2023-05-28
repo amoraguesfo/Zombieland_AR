@@ -6,7 +6,7 @@ public class ButtonUI : MonoBehaviour
 {
     public void LoadCap1()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Cap1");
     }
     public void LoadCap2()
     {
