@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Teclado : MonoBehaviour
@@ -82,6 +83,8 @@ public class Teclado : MonoBehaviour
         //Mostrar indicador de combinacion correcta
         indicadorResultado.color = Color.green;
         combinacionDescubierta = true;
+        SceneManager.LoadScene("Cap4_end");
+
     }
 
     

@@ -65,7 +65,7 @@ public class ZombieController : MonoBehaviour
             if (GotHitScreen.GetComponent<Image>().color.a > 0)
             {
                 var color = GotHitScreen.GetComponent<Image>().color;
-                color.a -= 0.001f;
+                color.a -= 0.01f;
                 GotHitScreen.GetComponent<Image>().color = color;
             }
         }
