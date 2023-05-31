@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 73146346}
   - component: {fileID: 73146348}
   - component: {fileID: 73146347}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73146345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -681,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000000029802322, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73146347
@@ -794,7 +794,8 @@ GameObject:
   - component: {fileID: 79879873}
   - component: {fileID: 79879872}
   - component: {fileID: 79879871}
-  m_Layer: 5
+  - component: {fileID: 79879875}
+  m_Layer: 8
   m_Name: Image_ (1)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -849,6 +850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 1
+  tiempoEspera: 1
 --- !u!114 &79879873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,6 +889,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79879869}
   m_CullTransparentMesh: 1
+--- !u!114 &79879875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79879869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 79879872}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &81631823
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +929,7 @@ GameObject:
   - component: {fileID: 81631824}
   - component: {fileID: 81631825}
   - component: {fileID: 81631826}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1135,7 @@ GameObject:
   - component: {fileID: 84805059}
   - component: {fileID: 84805061}
   - component: {fileID: 84805060}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1767,6 +1798,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885866}
     m_Modifications:
+    - target: {fileID: 8073768386363910734, guid: 46cb0b9d9fec7494eb8ea2af72787915,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8073768386363910736, guid: 46cb0b9d9fec7494eb8ea2af72787915,
         type: 3}
       propertyPath: m_RootOrder
@@ -2089,7 +2125,7 @@ GameObject:
   - component: {fileID: 362531878}
   - component: {fileID: 362531880}
   - component: {fileID: 362531879}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,7 +2609,8 @@ GameObject:
   - component: {fileID: 435323209}
   - component: {fileID: 435323208}
   - component: {fileID: 435323207}
-  m_Layer: 5
+  - component: {fileID: 435323211}
+  m_Layer: 8
   m_Name: Image_ (2)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -2628,6 +2665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 2
+  tiempoEspera: 1
 --- !u!114 &435323209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,6 +2704,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435323205}
   m_CullTransparentMesh: 1
+--- !u!114 &435323211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435323205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 435323208}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &438656111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4622713565080048, guid: fcf33ec5356e5264a93d7b3ebc620838,
@@ -3071,7 +3138,8 @@ GameObject:
   - component: {fileID: 678628213}
   - component: {fileID: 678628212}
   - component: {fileID: 678628211}
-  m_Layer: 5
+  - component: {fileID: 678628215}
+  m_Layer: 8
   m_Name: Image_ (9)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -3126,6 +3194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 9
+  tiempoEspera: 1
 --- !u!114 &678628213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3164,6 +3233,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678628209}
   m_CullTransparentMesh: 1
+--- !u!114 &678628215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678628209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 678628212}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &697243782
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3275,8 @@ GameObject:
   - component: {fileID: 697243786}
   - component: {fileID: 697243785}
   - component: {fileID: 697243784}
-  m_Layer: 5
+  - component: {fileID: 697243788}
+  m_Layer: 8
   m_Name: Image_ (8)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -3232,6 +3331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 8
+  tiempoEspera: 1
 --- !u!114 &697243786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,6 +3370,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697243782}
   m_CullTransparentMesh: 1
+--- !u!114 &697243788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697243782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 697243785}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &702978424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3660,7 +3789,8 @@ GameObject:
   - component: {fileID: 830279062}
   - component: {fileID: 830279061}
   - component: {fileID: 830279060}
-  m_Layer: 5
+  - component: {fileID: 830279064}
+  m_Layer: 8
   m_Name: Image_ (5)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -3715,6 +3845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 5
+  tiempoEspera: 1
 --- !u!114 &830279062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3753,6 +3884,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830279058}
   m_CullTransparentMesh: 1
+--- !u!114 &830279064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830279058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 830279061}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &862818144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3766,7 +3926,8 @@ GameObject:
   - component: {fileID: 862818148}
   - component: {fileID: 862818147}
   - component: {fileID: 862818146}
-  m_Layer: 5
+  - component: {fileID: 862818150}
+  m_Layer: 8
   m_Name: Image_ (4)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -3821,6 +3982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 4
+  tiempoEspera: 1
 --- !u!114 &862818148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3859,6 +4021,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862818144}
   m_CullTransparentMesh: 1
+--- !u!114 &862818150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862818144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 862818147}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &917464179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4017,7 +4208,7 @@ GameObject:
   - component: {fileID: 1083506383}
   - component: {fileID: 1083506385}
   - component: {fileID: 1083506384}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4306,7 +4497,8 @@ GameObject:
   - component: {fileID: 1140964668}
   - component: {fileID: 1140964667}
   - component: {fileID: 1140964666}
-  m_Layer: 5
+  - component: {fileID: 1140964670}
+  m_Layer: 8
   m_Name: Image_ (6)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -4361,6 +4553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 6
+  tiempoEspera: 1
 --- !u!114 &1140964668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4399,6 +4592,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140964664}
   m_CullTransparentMesh: 1
+--- !u!114 &1140964670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140964664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1140964667}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1144166963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4485,7 +4707,7 @@ GameObject:
   - component: {fileID: 1186660478}
   - component: {fileID: 1186660480}
   - component: {fileID: 1186660479}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4695,7 +4917,7 @@ GameObject:
   - component: {fileID: 1286929090}
   - component: {fileID: 1286929092}
   - component: {fileID: 1286929091}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4830,7 +5052,7 @@ GameObject:
   - component: {fileID: 1317724664}
   - component: {fileID: 1317724666}
   - component: {fileID: 1317724665}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4954,6 +5176,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317724663}
   m_CullTransparentMesh: 1
+--- !u!1 &1333029576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8073768386363910737, guid: 46cb0b9d9fec7494eb8ea2af72787915,
+    type: 3}
+  m_PrefabInstance: {fileID: 288915532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1333029579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333029576}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7993cc76bdd514492c2a75d1fe54e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReticleSortingOrder: 32767
+  ReticleInteractionLayerMask:
+    m_Bits: 256
+  _RETICLE_MAX_DISTANCE: 10
+  _gazedAtObject: {fileID: 0}
+  _reticleMaterial: {fileID: 0}
+  _reticleInnerAngle: 0
+  _reticleOuterAngle: 0
+  _reticleDistanceInMeters: 0
+  _reticleInnerDiameter: 0
+  _reticleOuterDiameter: 0
+  onFocusInteractable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  onLoseFocus:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  isTouching: 0
 --- !u!1001 &1334424286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5546,7 +5810,7 @@ GameObject:
   - component: {fileID: 1496718939}
   - component: {fileID: 1496718938}
   - component: {fileID: 1496718937}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: TecladoCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5768,7 +6032,8 @@ GameObject:
   - component: {fileID: 1556515184}
   - component: {fileID: 1556515183}
   - component: {fileID: 1556515182}
-  m_Layer: 5
+  - component: {fileID: 1556515186}
+  m_Layer: 8
   m_Name: Image_ (3)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -5823,6 +6088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 3
+  tiempoEspera: 1
 --- !u!114 &1556515184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5861,6 +6127,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556515180}
   m_CullTransparentMesh: 1
+--- !u!114 &1556515186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556515180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1556515183}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1562208534
 GameObject:
   m_ObjectHideFlags: 0
@@ -5872,7 +6167,7 @@ GameObject:
   - component: {fileID: 1562208535}
   - component: {fileID: 1562208537}
   - component: {fileID: 1562208536}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6450,7 @@ GameObject:
   - component: {fileID: 1656356395}
   - component: {fileID: 1656356397}
   - component: {fileID: 1656356396}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image_ (10)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -6566,7 +6861,7 @@ GameObject:
   - component: {fileID: 1822926765}
   - component: {fileID: 1822926767}
   - component: {fileID: 1822926766}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6703,7 +6998,8 @@ GameObject:
   - component: {fileID: 1836127720}
   - component: {fileID: 1836127719}
   - component: {fileID: 1836127718}
-  m_Layer: 5
+  - component: {fileID: 1836127722}
+  m_Layer: 8
   m_Name: Image_
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -6758,6 +7054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 0
+  tiempoEspera: 1
 --- !u!114 &1836127720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6796,6 +7093,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836127716}
   m_CullTransparentMesh: 1
+--- !u!114 &1836127722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836127716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1836127719}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1872239661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7027,7 +7353,6 @@ GameObject:
   - component: {fileID: 1979096313}
   - component: {fileID: 1979096312}
   - component: {fileID: 1979096311}
-  - component: {fileID: 1979096310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7035,19 +7360,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1979096310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979096309}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa39b1609de2fff449088fdd10adf853, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GotHitScreen: {fileID: 1012208724}
 --- !u!54 &1979096311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7121,15 +7433,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979096309}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: 0, z: 4.8}
+  m_LocalRotation: {x: -0, y: 0.9994044, z: -0, w: -0.03451034}
+  m_LocalPosition: {x: -0.24, y: 0, z: -5.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4223495}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 183.955, z: 0}
 --- !u!1001 &1999404290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7283,7 +7595,7 @@ GameObject:
   - component: {fileID: 2060195197}
   - component: {fileID: 2060195199}
   - component: {fileID: 2060195198}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7420,7 +7732,8 @@ GameObject:
   - component: {fileID: 2115130328}
   - component: {fileID: 2115130327}
   - component: {fileID: 2115130326}
-  m_Layer: 5
+  - component: {fileID: 2115130330}
+  m_Layer: 8
   m_Name: Image_ (7)
   m_TagString: Teclado
   m_Icon: {fileID: 0}
@@ -7475,6 +7788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teclado: {fileID: 1496718937}
   valorTecla: 7
+  tiempoEspera: 1
 --- !u!114 &2115130328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7513,6 +7827,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115130324}
   m_CullTransparentMesh: 1
+--- !u!114 &2115130330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115130324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2115130327}
+          m_TargetAssemblyTypeName: Tecla, Assembly-CSharp
+          m_MethodName: InsertarTecla
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &2118719758
 PrefabInstance:
   m_ObjectHideFlags: 0

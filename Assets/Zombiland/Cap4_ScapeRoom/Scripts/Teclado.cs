@@ -52,7 +52,7 @@ public class Teclado : MonoBehaviour
             {
                 if (combinacionCorrecta.FindAll(x => x.Equals(combinacionActual[i])).Count <= 1)
                 {
-                    //MOstrar indicador de combinacion incorrecta
+                    //MOstrar indicador de combinacion correcta
                     indicadorResultado.color = Color.red;
                     combinacionActual.Clear();
                     return;
@@ -83,6 +83,8 @@ public class Teclado : MonoBehaviour
         //Mostrar indicador de combinacion correcta
         indicadorResultado.color = Color.green;
         combinacionDescubierta = true;
+        //TODO contador igual que en el laberinto
+        AppController.Instance.addScore(100);
         SceneManager.LoadScene("Cap4_end");
 
     }
