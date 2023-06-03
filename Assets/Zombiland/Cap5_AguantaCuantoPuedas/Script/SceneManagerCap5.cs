@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using Google.XR.Cardboard;
 
 public class SceneManagerCap5 : MonoBehaviour
 {
@@ -11,7 +12,11 @@ public class SceneManagerCap5 : MonoBehaviour
     public int puntuacion;
     public TextMeshProUGUI final;
 
+    private void Awake()
+    {
+        CardboardController.Instance.StartCardboard();
 
+    }
 
     public void Start()
     {
@@ -43,5 +48,6 @@ public class SceneManagerCap5 : MonoBehaviour
         //Añadimos los puntos del Cap1
         AppController.Instance.addScore(puntuacion);
         SceneManager.LoadScene("MainMenu");
+        CardboardController.Instance.StopCardboard();
     }
 }

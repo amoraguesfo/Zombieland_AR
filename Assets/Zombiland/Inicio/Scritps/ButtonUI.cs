@@ -28,7 +28,7 @@ public class ButtonUI : MonoBehaviour
     }
     public void LoadCap5()
     {
-        SceneManager.LoadScene("Cap5-Intro");
+        SceneManager.LoadScene("Cap5_Intro");
 
     }
 }

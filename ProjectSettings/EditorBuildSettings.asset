@@ -39,14 +39,14 @@ EditorBuildSettings:
     path: Assets/Zombiland/Cap4_ScapeRoom/Scenes/Cap4_end.unity
     guid: d78bcb0448280e44b80db7994975c6bb
   - enabled: 1
-    path: Assets/Zombiland/Cap5_AguantaCuantoPuedas/Scene/Cap5-Intro.unity
-    guid: 98286d839903a4504bfecc62f0f9f19c
+    path: Assets/Zombiland/Cap5_AguantaCuantoPuedas/Scene/Cap5_intro.unity
+    guid: d88b3a41d1968c34880d215e71b87154
   - enabled: 1
     path: Assets/Zombiland/Cap5_AguantaCuantoPuedas/Scene/Cap5juego.unity
     guid: 51761cc6286e14bb1ab0b0f817257312
   - enabled: 1
-    path: Assets/Zombiland/Cap5_AguantaCuantoPuedas/Scene/Cap5-Final.unity
-    guid: fae90cfc786a0458e8c8f6c33f05be92
+    path: Assets/Zombiland/Cap5_AguantaCuantoPuedas/Scene/Cap5_end.unity
+    guid: 488a64e579615e944b856172a3619fd3
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

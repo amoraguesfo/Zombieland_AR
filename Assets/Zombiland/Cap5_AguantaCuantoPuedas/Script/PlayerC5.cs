@@ -47,7 +47,7 @@ public class PlayerC5 : MonoBehaviour
     public void finjuego()
     {
         PlayerPrefs.SetInt("PuntosC5",Puntos);
-        SceneManager.LoadScene("Cap5-Final");
+        SceneManager.LoadScene("Cap5_end");
 
     }
 
